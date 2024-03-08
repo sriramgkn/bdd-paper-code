@@ -71,16 +71,12 @@ def asy_E_22(R,V,B,b):
 B_range = np.arange(0.1,10,0.2)
 
 #fig, ax1 = plt.subplots()
-
 #x_cor, y_cor, width, height = [0.17, 0.67, 0.2, 0.2]
-
 #ax2 = fig.add_axes([x_cor, y_cor, width, height])
 
 for l in [0, 1, -1, 2, -2]:
 	E_ab_list_t = map(lambda H: E_abs(zero(0.067*V0/(0.116*H),R(abs_R,H),b,u,l),H) , B_range)
-
 	E_ab_list = list(E_ab_list_t)
-
 	plt.plot(B_range, E_ab_list, label='(1,%s), numerical' % l)
 
 
@@ -106,11 +102,8 @@ inset=plt.axes([0.17, 0.67, 0.2, 0.2])
 
 for l in [0, 1, -1, 2, -2]:
 	E_ab_list_t = map(lambda H: E_abs(zero(V0/(0.116*H),R(abs_R,H),1.0,u,l),H) , B_range)
-
 	E_ab_list = list(E_ab_list_t)
-
 	plt.plot(B_range, E_ab_list)
 
-plt.text(5,160,r'\beta=0.7')
-
+plt.text(5,160,r'$\beta=0.7$')
 plt.show()
